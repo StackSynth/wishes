@@ -1,0 +1,124 @@
+/* ======================================
+   Hero – Birthday greeting section
+   ====================================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: var(--space-lg);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* ── Letter-by-letter heading ──────────────────── */
+.hero__heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 8vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero__letter {
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    var(--clr-primary) 0%,
+    var(--clr-secondary) 33%,
+    var(--clr-accent) 66%,
+    var(--clr-primary) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  will-change: transform, opacity;
+}
+
+.hero__letter--space {
+  width: 0.3em;
+}
+
+/* ── Name ──────────────────────────────────────── */
+.hero__name {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 10vw, 6rem);
+  font-weight: 800;
+  font-style: italic;
+  background: linear-gradient(
+    135deg,
+    var(--clr-secondary) 0%,
+    var(--clr-accent) 50%,
+    var(--clr-primary) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 4px 12px rgba(139, 126, 200, 0.3));
+  will-change: transform, opacity;
+}
+
+/* ── Age badge ─────────────────────────────────── */
+.hero__age {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--clr-accent) 0%,
+    var(--clr-accent-light) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(212, 165, 116, 0.4),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.08);
+  will-change: transform, opacity;
+}
+
+.hero__age-number {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--clr-white);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Subtitle ──────────────────────────────────── */
+.hero__subtitle {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  color: var(--clr-text-muted);
+  font-weight: 400;
+  max-width: 400px;
+  will-change: transform, opacity;
+}
+
+/* ── Responsive ────────────────────────────────── */
+@media (min-width: 768px) {
+  .hero__age {
+    width: 110px;
+    height: 110px;
+  }
+
+  .hero__age-number {
+    font-size: 2.8rem;
+  }
+
+  .hero__subtitle {
+    max-width: 500px;
+  }
+}

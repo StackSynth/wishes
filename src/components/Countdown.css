@@ -1,0 +1,104 @@
+/* ======================================
+   Countdown – Timer section
+   ====================================== */
+
+.countdown__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.countdown__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg) var(--space-sm);
+  text-align: center;
+  will-change: transform, opacity;
+}
+
+.countdown__number {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 800;
+  background: linear-gradient(
+    135deg,
+    var(--clr-primary) 0%,
+    var(--clr-secondary) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  will-change: transform, opacity;
+}
+
+.countdown__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--clr-text-muted);
+  margin-top: var(--space-xs);
+}
+
+/* ── "Today" state ─────────────────────────────── */
+.countdown__today {
+  text-align: center;
+  padding: var(--space-xl);
+}
+
+.countdown__today-emoji {
+  display: block;
+  font-size: 4rem;
+  margin-bottom: var(--space-md);
+  animation: bounce 1s ease-in-out infinite;
+}
+
+.countdown__today-text {
+  font-size: clamp(2rem, 6vw, 3rem);
+  background: linear-gradient(
+    135deg,
+    var(--clr-primary),
+    var(--clr-secondary),
+    var(--clr-accent)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.countdown__today-sub {
+  color: var(--clr-text-muted);
+  font-size: 1.1rem;
+  margin-top: var(--space-sm);
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ── Responsive ────────────────────────────────── */
+@media (min-width: 768px) {
+  .countdown__grid {
+    gap: var(--space-md);
+    max-width: 600px;
+  }
+
+  .countdown__card {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .countdown__label {
+    font-size: 0.85rem;
+  }
+}

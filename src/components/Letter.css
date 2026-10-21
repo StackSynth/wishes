@@ -1,0 +1,96 @@
+/* ======================================
+   Letter – Heartfelt card section
+   ====================================== */
+
+.letter__card {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+  position: relative;
+  overflow: visible;
+  will-change: transform, opacity;
+}
+
+/* Decorative seal */
+.letter__seal {
+  position: absolute;
+  top: -20px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--clr-secondary), var(--clr-accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 16px rgba(232, 160, 191, 0.4);
+  transform: rotate(12deg);
+}
+
+/* Body text */
+.letter__body {
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  line-height: 1.8;
+  color: var(--clr-text);
+}
+
+.letter__line {
+  will-change: transform, opacity;
+}
+
+/* Signature */
+.letter__signature {
+  margin-top: var(--space-lg);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--clr-primary);
+  text-align: right;
+}
+
+.letter__dash {
+  margin-right: var(--space-xs);
+}
+
+/* ── Decorative corner flourishes ──────────────── */
+.letter__card::before,
+.letter__card::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.letter__card::before {
+  top: 12px;
+  left: 12px;
+  border-top: 2px solid var(--clr-primary);
+  border-left: 2px solid var(--clr-primary);
+  border-radius: 4px 0 0 0;
+}
+
+.letter__card::after {
+  bottom: 12px;
+  right: 12px;
+  border-bottom: 2px solid var(--clr-primary);
+  border-right: 2px solid var(--clr-primary);
+  border-radius: 0 0 4px 0;
+}
+
+/* ── Responsive ────────────────────────────────── */
+@media (min-width: 768px) {
+  .letter__card {
+    padding: var(--space-2xl) var(--space-xl);
+  }
+
+  .letter__seal {
+    width: 56px;
+    height: 56px;
+    font-size: 1.8rem;
+    top: -24px;
+    right: 32px;
+  }
+}

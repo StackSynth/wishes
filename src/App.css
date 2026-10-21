@@ -1,0 +1,30 @@
+/* ======================================
+   App – Root layout
+   ====================================== */
+
+.app__main {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Smooth section spacing */
+.app__main > section {
+  position: relative;
+}
+
+/* Subtle separator between sections */
+.app__main > section + section::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  margin: 0 auto var(--space-xl);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--clr-primary-light),
+    transparent
+  );
+  border-radius: 1px;
+  opacity: 0.5;
+}

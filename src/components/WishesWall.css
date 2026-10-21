@@ -1,0 +1,97 @@
+/* ======================================
+   WishesWall – Guestbook section
+   ====================================== */
+
+.wishes__form {
+  max-width: 500px;
+  margin: 0 auto var(--space-xl);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  will-change: transform, opacity;
+}
+
+.wishes__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.wishes__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--clr-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.wishes__input,
+.wishes__textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--clr-surface-border);
+  border-radius: var(--radius-md);
+  color: var(--clr-text);
+  font-size: 0.95rem;
+  transition: border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+  outline: none;
+}
+
+.wishes__input:focus,
+.wishes__textarea:focus {
+  border-color: var(--clr-primary-light);
+  box-shadow: 0 0 0 3px rgba(139, 126, 200, 0.15);
+}
+
+.wishes__textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.wishes__submit {
+  align-self: flex-start;
+}
+
+/* ── Wishes list ───────────────────────────────── */
+.wishes__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.wishes__card {
+  padding: var(--space-lg);
+  will-change: transform, opacity;
+}
+
+.wishes__card-message {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--clr-text);
+  font-style: italic;
+}
+
+.wishes__card-name {
+  margin-top: var(--space-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--clr-primary);
+}
+
+/* ── Responsive ────────────────────────────────── */
+@media (min-width: 640px) {
+  .wishes__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .wishes__form {
+    padding: var(--space-xl);
+  }
+}
